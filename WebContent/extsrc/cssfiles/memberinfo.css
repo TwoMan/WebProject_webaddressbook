@@ -1,0 +1,169 @@
+/*整个背景色为白色*/
+body{
+	background-color:#fff; 
+	font-family: "微软雅黑";
+}
+div.top_nav{
+	background: #fefefe url(../images/top_nav_bar.png) repeat-x;
+	width: 100%;
+	height: 2em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 4;
+}
+div.container{
+	width: 960px;
+	margin: 0 auto;
+}
+ul.nav{
+	margin: 0;
+	padding: 0;
+	list-style: none;    /*没有列表点*/
+	overflow: hidden;    /*因为li元素浮动，然后，父列表实际上没有内容，插不上背景图，所以用overflow: hidden;技术来解决*/
+	
+}
+
+/*水平显示*/
+ul.nav li{
+	float: left;
+}
+
+/*添加分割线*/
+ul.nav a{
+	margin-top: 2px;
+	display: block;
+	line-height: 1.5em;
+	padding: 0 1em;
+	text-decoration: none;
+	color: #000;
+}
+/**用户鼠标悬空是改变字体颜色*/
+.nav a:hover, a:focus{
+	color: #fff;
+	background-color: #03004c;
+	font-size: 105%;
+}
+h1{
+	position: relative;
+	margin-bottom: 5px;
+	margin-left: 50px;
+	padding-top: 60px; 
+}
+
+div.bottom{
+	margin: 0;
+	border-top: #394a64 solid 3px;
+	width: 960px;
+	height: 8em;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+#logo_banner{
+	height: 180px;
+	width: 960px;
+	margin: 0 auto;
+	padding-bottom: 15px; 
+	margin-bottom: 15px;
+	border-bottom: #394a64 solid 3px;
+}
+#main_content{
+	/*border: 3px solid #ae113d;*/
+	width: 960px;
+	height: 740px;
+	margin: 0 auto;
+	box-shadow: 0 0  2px rgba(0,0,0,.5);
+
+}
+#main_content .left_up{
+	background-image:url(../images/card_front.png);
+	width: 550px;
+	height: 331px;
+	margin: 0 auto;
+}
+#main_content .left_down{
+	background-image: url(../images/card_back.png);
+	width: 550px;
+	height: 331px;
+	margin: 0 auto;
+}
+div .left{
+    /*border:2px solid #ae113d;*/
+    width:668px;
+    height:730px;
+    margin: 3px 0px 5px 3px;
+    float: left;
+    position: relative;
+    z-index: 0;
+    color: #fbb03b;
+    transition-property:box-shadow;
+	-webkit-transition-property: box-shadow;
+	-moz-transition-property: box-shadow;
+}
+div .right{
+	/*border:2px solid #000;*/
+    width:270px;
+    height:730px;
+    margin: 3px 3px 5px 0px;
+    float: right;
+    position: relative;
+    z-index: 0;
+    transition-property:box-shadow;
+	-webkit-transition-property: box-shadow;
+	-moz-transition-property: box-shadow;
+}
+div .left:hover{
+	position: relative;
+	left: -4px;
+	top: -3px;
+	padding: 3px;
+	margin-bottom: -4px;
+	box-shadow: 0 0 10px 4px rgba(1,1,1,0.3);
+	z-index: 3;
+} 
+div .right:hover{
+	position: relative;
+	right: -4px;
+	top: -3px;
+	padding: 3px;
+	margin-bottom: -4px;
+	box-shadow: 0 0 10px 4px rgba(1,1,1,0.3);
+	z-index: 3;
+} 
+
+.left ul{
+	list-style: none;
+	position: relative;
+	padding: 0;
+	margin-left: 50px;
+	margin-top: 60px;
+}
+.right ul{
+	list-style: none;
+	color: #fbb03b;
+}
+.right ul li a:hover{
+	text-decoration: underline;
+	position: relative;
+	left: 4px;
+	top: -2px;
+	font-size: 110%;
+}
+.right a{
+	text-decoration: none;
+}
+.left_up p,.left_down p{
+	margin-left: 50px;
+	margin-top: 7px;
+
+}
+.bottom img{
+	height: 50px;
+	width: 50px;
+	margin-left: 47.5%;
+}
+.bottom p{
+	color: #5b5b5a;
+	font-family:"Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+}

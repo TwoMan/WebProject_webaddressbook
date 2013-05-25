@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+div.head{
+	height:100px;
+	width:100%;
+	background-color:#5E5E5E;
+}
+div.body{
+	height:650px;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+div.tail{
+	height:50px;
+	width:100%;
+	background-color:#9B9B9B;
+}
+div.linkguide{
+	float:right;
+}
+table.classlisttable{
+	position:relative;
+	top:100px;
+	left:10%;
+}
+div.pagetitle{
+	height:50px;
+	width:100%;
+	text-align:center;
+}
+#pfront{
+	font-size:30px;
+}
+div.membertable{
+	
+}
