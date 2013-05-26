@@ -1,14 +1,17 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="javabean.*;" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<!-- head 部分  -->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>用户首页</title>
 	<link rel="stylesheet" type="text/css" href="./extsrc/css/memberinfo.css"></head>
 	<%! MemberInfomation memberinfo=null; %>
 	<% memberinfo=(MemberInfomation)request.getAttribute("memberinfo"); %>
+</head>
+
+<!-- part of body -->
 <body>
 	<%
 		if(session.isNew())
