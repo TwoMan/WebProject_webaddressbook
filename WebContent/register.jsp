@@ -65,12 +65,18 @@
 		var userIDVal = document.registerForm.userID.value;
 		if ( userIDVal.length >= 19) {
 			alert("你输入字符超过18个，请重新输入！");
+			//清空用户所填的
+			userID.value = "";
+			//重新获得输入框焦点
 			userID.focus();
 		} else {
 			//考虑小键盘上的数字键，只能是数字
 			var reg = /^[0-9]*$/i; //正则表达式，表示数字
 			if (!reg.test( userIDVal )) {
 				alert("只能输入数字字符，请重新输入！");
+				//清空用户所填的
+				userID.value = "";
+				//重新获得输入框焦点
 				userID.focus();
 			}
 		}
@@ -87,6 +93,9 @@
 		// 字符数不能超过18位
 		if (!( userNameVal.length <=15 )) {
 			alert("你输入字符超过15个，请重新输入！");
+			//清空用户所填的
+			userName.value = "";
+			//重新获得输入框焦点
 			userName.focus();
 		} else {
 			//考虑小键盘上的数字键，只能是中文
@@ -94,6 +103,9 @@
 			var reg = /^[\u4e00-\u9fa5]+$/g;  //正则表达式，表示只能输入中文，全部中文
 			if (!reg.test( userNameVal )) {
 				alert("只能输入中文字符，请重新输入！");
+				//清空用户所填的
+				userName.value = "";
+				//重新获得输入框焦点
 				userName.focus();
 			}
 		}
@@ -111,11 +123,17 @@
 		var reg = /^[0-9]*$/i;  //正则表达式，表示只能输入11位数的号码
 		if(!(phoneNumberVal.length == 11)) {
 			alert("请正确输入手机号码！");
+			//清空用户所填的
+			phoneNumber.value = "";
+			//重新获得输入框焦点
 			phoneNumber.focus();
 			
 		}else{
 			if(!reg.test(phoneNumberVal)){
 			alert("请正确输入手机号码！");
+			//清空用户所填的
+			phoneNumber.value = "";
+			//重新获得输入框焦点
 			phoneNumber.focus();
 		}
 		} 
@@ -132,11 +150,17 @@
 		var reg = /[\u4e00-\u9fa5]/i;  //正则表达式，表示只能输入中文或者英文
 		if(!(currentAddressVal.length <=30)) {
 			alert("地址长度超过30，请重新输入！");
+			//清空用户所填的
+			currentAddress.value = "";
+			//重新获得输入框焦点
 			currentAddress.focus();
 			
 		}else{
 			if(!reg.test(currentAddressVal)){
 			alert("只能输入中文或者英文！请正确输入现居地址~");
+			//清空用户所填的
+			currentAddress.value = "";
+			//重新获得输入框焦点
 			currentAddress.focus();
 		}
 		} 
@@ -153,11 +177,17 @@
 		var reg = /[\u4e00-\u9fa5]/i;  //正则表达式，表示只能输入中文或者英文
 		if(!(careerVal.length <=30 )) {
 			alert("工作类型长度超过30，请重新输入！");
+			//清空用户所填的
+			career.value = "";
+			//重新获得输入框焦点
 			career.focus();
 			
 		}else{
 			if(!reg.test(careerVal)){
 			alert("只能输入中文或者英文，请正确输入工作类型~");
+			//清空用户所填的
+			career.value = "";
+			//重新获得输入框焦点
 			career.focus();
 		}
 		} 
@@ -173,11 +203,17 @@
 		var reg = /[\u4e00-\u9fa5]/i;  //正则表达式，表示只能输入中文或者英文
 		if(!(worktVal.length <= 30)) {
 			alert("现任职务长度超过30，请重新输入！");
+			//清空用户所填的
+			workt.value = "";
+			//重新获得输入框焦点
 			workt.focus();
 			
 		}else{
 			if(!reg.test(worktVal)){
 			alert("只能输入中文或者英文，请正确输入现任职务~");
+			//清空用户所填的
+			workt.value = "";
+			//重新获得输入框焦点
 			workt.focus();
 		}
 		} 

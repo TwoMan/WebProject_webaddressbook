@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -87,16 +88,28 @@
 	<!-- 验证注册身份证号码是否输入正确 -->
 	<script language=javascript>
 		function onlyless19Num() {
+			var userId = document.loginform.id;
+			var userIdVal =document.loginform.id.value;
 			// 字符数不能超过18位
-			if (document.loginform.id.value.length >= 19) {
+			if (userIdVal.length >= 19) {
 				alert("你输入字符超过18个，请重新输入！");
-				document.loginform.id.focus();
+				
+				//清空用户所填的
+				userId.value = "";  
+				
+				//重新获得输入框焦点
+				userId.focus();
 			}else{
 			//考虑小键盘上的数字键，只能是数字
 			var reg = /^[0-9]*$/i;    //正则表达式，表示数字
-			if (!reg.test(document.loginform.id.value)) {
+			if (!reg.test(userIdVal)) {
 				alert("只能输入数字字符，请重新输入！");
-				document.loginform.id.focus();
+				
+				//清空用户所填的
+				userId.value = "";
+				
+				//重新获得输入框焦点
+				userId.focus();
 			}
 		}
 
