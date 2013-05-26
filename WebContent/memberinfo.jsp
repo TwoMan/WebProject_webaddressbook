@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Insert title here</title>
+	<title>用户首页</title>
 	<link rel="stylesheet" type="text/css" href="./extsrc/css/memberinfo.css"></head>
 	<%! MemberInfomation memberinfo=null; %>
 	<% memberinfo=(MemberInfomation)request.getAttribute("memberinfo"); %>
@@ -115,17 +115,34 @@
 		</p>
 
 	</div>
-	<!--目前这代码没有作用
+	
 	<script type="text/javascript" src="./extsrc/js/getID.js"></script>
 	<script type="text/javascript">
 		var card_front = getID("left_card_front");
-		//alert(card_front.getAttribute("margin-top"));
 		var card_back = getID("left_card_back");
+		
+		//把count定义为全局变量，用来判断用户的点击哪个名片
+		//才做出正确的行为
+		var count = 1;
+		
 		card_front.onclick=function(){
-			card_front.setAttribute("margin-top","0");
-			card_back.setAttribute("display","block");
-		}
+			if( count % 2 == 1){
+			//改变名片的位置，添加交互性
+			card_front.style.cssText = "margin-top :0px";
+			card_back.style.cssText = "display :block";
+			count++;
+			}else{
+				//也可以这样写card_front.style.margin-top="200px";
+				card_front.style.cssText = "margin-top :200px";
+				card_back.style.cssText = "display :none";
+				count++;
+			}
+		};
+		card_back.onclick = function() {
+			card_front.style.cssText = "margin-top :200px";
+			card_back.style.cssText = "display :none";
+			count = 1;
+		};
 	</script>
--->
 </body>
 </html>

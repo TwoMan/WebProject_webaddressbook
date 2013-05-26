@@ -1,4 +1,4 @@
-/*整个背景色为白色*/
+/*鏁翠釜鑳屾櫙鑹蹭负鐧借壊*/
 body{
 	background-color:#fff; 
 	font-family: "微软雅黑";
@@ -19,17 +19,16 @@ div.container{
 ul.nav{
 	margin: 0;
 	padding: 0;
-	list-style: none;    /*没有列表点*/
-	overflow: hidden;    /*因为li元素浮动，然后，父列表实际上没有内容，插不上背景图，所以用overflow: hidden;技术来解决*/
-	
+	list-style: none;    /*娌℃湁鍒楄〃鐐�/
+	overflow: hidden;    /*鍥犱负li鍏冪礌娴姩锛岀劧鍚庯紝鐖跺垪琛ㄥ疄闄呬笂娌℃湁鍐呭锛屾彃涓嶄笂鑳屾櫙鍥撅紝鎵�互鐢╫verflow: hidden;鎶�湳鏉ヨВ鍐*/
 }
 
-/*水平显示*/
+/*姘村钩鏄剧ず*/
 ul.nav li{
-	float: left;
+ 	float: left;
 }
-
-/*添加分割线*/
+	
+/*娣诲姞鍒嗗壊绾*/
 ul.nav a{
 	margin-top: 2px;
 	display: block;
@@ -38,7 +37,7 @@ ul.nav a{
 	text-decoration: none;
 	color: #000;
 }
-/**用户鼠标悬空是改变字体颜色*/
+/**鐢ㄦ埛榧犳爣鎮┖鏄敼鍙樺瓧浣撻鑹*/
 .nav a:hover, a:focus{
 	color: #fff;
 	background-color: #03004c;
@@ -75,17 +74,20 @@ div.bottom{
 	box-shadow: 0 0  2px rgba(0,0,0,.5);
 
 }
-#main_content .left_up{
+#left_card_front{
 	background-image:url(../images/card_front.png);
 	width: 550px;
 	height: 331px;
 	margin: 0 auto;
+	margin-top:200px;
+	
 }
-#main_content .left_down{
+#left_card_back{
 	background-image: url(../images/card_back.png);
 	width: 550px;
 	height: 331px;
 	margin: 0 auto;
+	display:none;
 }
 div .left{
     /*border:2px solid #ae113d;*/
