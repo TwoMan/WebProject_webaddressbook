@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="./extsrc/css/index.css">
 </head>
 
-<!-- body 部分 hh-->
+<!-- body 部分 -->
 <body>
 	<div id="loginWindow" class="radius">
 		<div class="wrapper">
