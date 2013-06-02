@@ -113,7 +113,7 @@
 	<div class="bottom">
 		<img src="./extsrc/images/logo_MeWe.png">
 		<p>
-			2013 &nbsp; <strong>WeMe</strong>
+			&copy;&nbsp;2013 &nbsp; <strong>WeMe</strong>
 			&nbsp;All Rights Reserved
 		</p>
 

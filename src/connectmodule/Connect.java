@@ -3,7 +3,7 @@ import java.sql.*;
 public class Connect {
 	private String user = "root";
 	private String password = "wjj";
-	private String url = "jdbc:mysql://localhost:3306/addressbook";
+	private String url = "jdbc:mysql://localhost:3306/addressbook?useUnicode=true&characterEncoding=gbk";
 	private Connection connection = null;
 	//获得connection连接
 	public Connection tryConnectDatabase(){		
