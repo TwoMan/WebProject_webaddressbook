@@ -52,6 +52,9 @@
 				<li>
 					<a href="#" >&nbsp;<%=memberinfo.get_name()%></a>
 				</li>
+				<li>
+					<a href="index.jsp">安全退出</a>
+				</li>
 			</ul>
 
 		</div>
