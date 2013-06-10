@@ -1,21 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    <%@ page import="java.util.*" %>
-    <%@ page import="javabean.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="javabean.*" %>
 <jsp:useBean id="schoolselect" class="javabean.SchoolSelectArray" ></jsp:useBean>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>choose the addressbook inside </title>
-<link rel="stylesheet" type="text/css" href="./extsrc/cssfiles/memberinfo.css">
-</head>
-<%!
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>choose the addressbook inside</title>
+	<link rel="stylesheet" type="text/css" href="./extsrc/css/joinclass.css"></head>
+	<%!
 int i=0; 
-ArrayList<String> selectarray_province,selectarray_city,selectarray_town,selectarray_school,selectarray_age,selectarray_classandgrade;
+ArrayList<String>
+	selectarray_province,selectarray_city,selectarray_town,selectarray_school,selectarray_age,selectarray_classandgrade;
 int state=1; 
 %>
-<%  
+	<%  
 selectarray_province = (ArrayList)schoolselect.getSchoolArray_province();
 selectarray_age = (ArrayList)schoolselect.getSchoolArray_age();
 selectarray_city = (ArrayList)schoolselect.getSchoolArray_city();
@@ -23,131 +23,230 @@ selectarray_town = (ArrayList)schoolselect.getSchoolArray_town();
 selectarray_school = (ArrayList)schoolselect.getSchoolArray_school();
 selectarray_classandgrade = (ArrayList)schoolselect.getSchoolArray_classandgrade();
 %>
-<!-- 这个页面内容比较多，你可以把js提取出来，和放到css目录里面  -->
+	<!-- 这个页面内容比较多，你可以把js提取出来，和放到css目录里面  -->
 <body>
-	<div class="pagehead"></div>
-	<div>
-	<div class="right">
-			<ul>
+	<!--顶部固定导航条-->
+	<div class="top_nav">
+		<!--顶部固定导航条左侧导航-->
+		<div class="container">
+			<!--左侧水平导航条-->
+			<ul class="nav">
 				<li>
-					<p>
-						<a href="UpdateMemberInfoAction">管理个人名片</a>
-					</p>
+					<a href="#" >首页</a>
 				</li>
 				<li>
-					<p>
-						<a href="ClassListAction">已加入通讯录</a>
-					</p>
+					<a href="#" >关于</a>
 				</li>
 				<li>
-					<p>
-						<a href="join_class_addressbook.jsp">去加入通讯录</a>
-					</p>
+					<a href="#" >新闻</a>
 				</li>
 				<li>
-					<p>
-						<a href="ClassListAction">去管理通讯录</a>
-					</p>
+					<a href="#" >产品</a>
+				</li>
+				<li>
+					<a href="#" >服务</a>
+				</li>
+
+				<!--这里的用户名应该放在右侧的，暂时放在这里先-->
+				<li>
+					<a href="#" >
+						<img src="./extsrc/images/me.jpg" height="20" width="20" style="margin-top:2px;"></a>
+				</li>
+				<li>
+					<a href="#" >
+						&nbsp;
+					</a>
+				</li>
+				<li>
+					<a href="index.jsp">安全退出</a>
 				</li>
 			</ul>
 		</div>
-	<div id="form_select" style="float:left;">
-	<form id="select_form" action="JoinbookAction" method="post">
-	<input type="hidden" name="create" id="create" value="old">
-	<table>
-	
-	<tr>	<td>请选择省份：</td>
-		<td><select name="province_select" id="province">
-		<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
-			<option value="" >
-		<%for(i=0;i<selectarray_province.size();i++){  %>
-			<option value="<%=selectarray_province.get(i) %>"><%=selectarray_province.get(i) %>
-		<%} %>	
-		</select></td>
-	</tr>
-		<td>请选择所在城市：</td>
-		<td><select name="city_select" id="city">
-		<option value="">
-		<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
-		<%for(i=0;i<selectarray_city.size();i++){  %>
-			<option value="<%=selectarray_city.get(i) %>"><%=selectarray_city.get(i) %>
-		<%} %>	
-		</select></td>
-	<tr>	
-		<td>请选择所在县城：</td>
-		<td><select name="town_select" id="town">
-		<option value="">
-		<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
-		<%for(i=0;i<selectarray_town.size();i++){  %>
-			<option value="<%=selectarray_town.get(i) %>"><%=selectarray_town.get(i) %>
-		<%} %>	
-		</select></td>
-	</tr>
-	<tr>	
-		<td>请选择你的学校名：</td>
-		<td><select name="school_select" id="school">
-		<option value="">
-		<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
-		<%for(i=0;i<selectarray_school.size();i++){  %>
-			<option value="<%=selectarray_school.get(i) %>"><%=selectarray_school.get(i) %>
-		<%} %>	
-		</select></td>
-	</tr>
-	<tr>	
-		<td>请选择你当时的年届：</td>
-		<td><select name="age_select" id="age">
-		<option value="">
-		<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
-		<%for(i=0;i<selectarray_age.size();i++){  %>
-			<option value="<%=selectarray_age.get(i) %>"><%=selectarray_age.get(i) %>
-		<%} %>	
-		</select></td>
-	</tr>	
-	<tr>
-		<td>请选择你的年纪和班：</td>
-		<td><select name="class_grade_select" id="classandgrade">
-		<option value="">
-		<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
-		<%for(i=0;i<selectarray_classandgrade.size();i++){ %>
-			<option value="<%=selectarray_classandgrade.get(i) %>"><%=selectarray_classandgrade.get(i) %>
-		<%} %>	
-		</select></td>
-	</tr>
-	
-	<tr>
-	<!-- 这几个id都比较重要，尽可能的不要修改它，当然，可以改变它的位置，你可以登录去尝试了解这些id是有什么作用的，如果你要定位的话，改用class来定位吧， -->
-	<td id="questp"></td>
-	<td><a id="quest"></a></td>
-	</tr>
-	<tr>
-		<td id="answerp"></td>		
-		<td><a id="answer"></a></td>
-	</tr>	
-	<tr>
-	<td id="applyquestion"></td>
-	<td><a id="oldquestanswer"></a></td>
-	<td><input type="submit" id="submit" value="提交"></td>
-	</tr>
-	</table>	
-	</form>
 	</div>
-	<div id="button" style="float:left;">
-		<table>
-			<tr><td><button class="but" onclick="check(1)">没有你想要的选择？请点击</button></td></tr>
-			<tr><td><button class="but" onclick="check(2)" >没有你想要的选择？请点击</button></td></tr>
-			<tr><td><button class="but"  onclick="check(3)">没有你想要的选择？请点击</button></td></tr>
-			<tr><td><button class="but"  onclick="check(4)">没有你想要的选择？请点击</button></td></tr>
-			<tr><td><button class="but"  onclick="check(5)">没有你想要的选择？请点击</button></td></tr>
-			<tr><td><button class="but"  onclick="check(6)">没有你想要的选择？请点击</button></td></tr>
-		</table>
+
+	<!--logo和横标banner-->
+	<div id="logo_banner">
+		<img src="./extsrc/images/banner.png"/>
 	</div>
-	</div>
-	<button onclick="createnode()">检测</button>
-</body>
-<script	language="javascript">
-	var check1=1,check2=1,check3=1,check4=1,check5=1,check6=1;
+	<div id="main_content">
+		<div class="left">
+			<form id="select_form" action="JoinbookAction" method="post">
+				<input type="hidden" name="create" id="create" value="old">
+				<table style="float:left;width:50%">
+					<tr>
+						<td>请选择省份：</td>
+						<td>
+							<select name="province_select" id="province">
+								<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
+								<option value="" >
+									<%for(i=0;i<selectarray_province.size();i++){  %>
+									<option value="<%=selectarray_province.get(i) %>
+										">
+										<%=selectarray_province.get(i) %>
+										<%} %></select>
+								</td>
+							</tr>
+							<td>请选择所在城市：</td>
+							<td>
+								<select name="city_select" id="city">
+									<option value="">
+										<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
+										<%for(i=0;i<selectarray_city.size();i++){  %>
+										<option value="<%=selectarray_city.get(i) %>
+											">
+											<%=selectarray_city.get(i) %>
+											<%} %></select>
+									</td>
+									<tr>
+										<td>请选择所在县城：</td>
+										<td>
+											<select name="town_select" id="town">
+												<option value="">
+													<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
+													<%for(i=0;i<selectarray_town.size();i++){  %>
+													<option value="<%=selectarray_town.get(i) %>
+														">
+														<%=selectarray_town.get(i) %>
+														<%} %></select>
+												</td>
+											</tr>
+											<tr>
+												<td>请选择你的学校名：</td>
+												<td>
+													<select name="school_select" id="school">
+														<option value="">
+															<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
+															<%for(i=0;i<selectarray_school.size();i++){  %>
+															<option value="<%=selectarray_school.get(i) %>
+																">
+																<%=selectarray_school.get(i) %>
+																<%} %></select>
+														</td>
+													</tr>
+													<tr>
+														<td>请选择你当时的年届：</td>
+														<td>
+															<select name="age_select" id="age">
+																<option value="">
+																	<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
+																	<%for(i=0;i<selectarray_age.size();i++){  %>
+																	<option value="<%=selectarray_age.get(i) %>
+																		">
+																		<%=selectarray_age.get(i) %>
+																		<%} %></select>
+																</td>
+															</tr>
+															<tr>
+																<td>请选择你的年纪和班：</td>
+																<td>
+																	<select name="class_grade_select" id="classandgrade">
+																		<option value="">
+																			<%--当从数据库中取得的列表数不为零时，自动生成多个选项 --%>
+																			<%for(i=0;i<selectarray_classandgrade.size();i++){ %>
+																			<option value="<%=selectarray_classandgrade.get(i) %>
+																				">
+																				<%=selectarray_classandgrade.get(i) %>
+																				<%} %></select>
+																		</td>
+																	</tr>
+
+																	<tr>
+																		<!-- 这几个id都比较重要，尽可能的不要修改它，当然，可以改变它的位置，你可以登录去尝试了解这些id是有什么作用的，如果你要定位的话，改用class来定位吧， -->
+																		<td id="questp"></td>
+																		<td>
+																			<a id="quest"></a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td id="answerp"></td>
+																		<td>
+																			<a id="answer"></a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td id="applyquestion"></td>
+																		<td>
+																			<a id="oldquestanswer"></a>
+																		</td>
+																		<td>
+																			<input type="submit" id="submit" value="提交"></td>
+																	</tr>
+																</table>
+															</form>
+
+															<div id="button" style="float:left;width:45%">
+																<table style="float:right">
+																	<tr>
+																		<td>
+																			<button class="but" onclick="check(1)">没有你想要的选择？请点击</button>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<button class="but" onclick="check(2)" >没有你想要的选择？请点击</button>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<button class="but"  onclick="check(3)">没有你想要的选择？请点击</button>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<button class="but"  onclick="check(4)">没有你想要的选择？请点击</button>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<button class="but"  onclick="check(5)">没有你想要的选择？请点击</button>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<button class="but"  onclick="check(6)">没有你想要的选择？请点击</button>
+																		</td>
+																	</tr>
+																</table>
+															</div>
+
+															<button onclick="createnode()">检测</button>
+														</div>
+														<div class="right">
+															<ul>
+																<li>
+																	<p>
+																		<a href="UpdateMemberInfoAction">管理个人名片</a>
+																	</p>
+																</li>
+																<li>
+																	<p>
+																		<a href="ClassListAction">已加入通讯录</a>
+																	</p>
+																</li>
+																<li>
+																	<p>
+																		<a href="join_class_addressbook.jsp">去加入通讯录</a>
+																	</p>
+																</li>
+																<li>
+																	<p>
+																		<a href="ClassListAction">去管理通讯录</a>
+																	</p>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<div class="bottom">
+														<img src="./extsrc/images/logo_MeWe.png">
+														<p>
+															&copy;&nbsp;2013 &nbsp; <strong>WeMe</strong>
+															&nbsp;All Rights Reserved
+														</p>
+
+													</div>
+													<script	language="javascript">
+														var check1=1,check2=1,check3=1,check4=1,check5=1,check6=1;
 	function check(kind){
-		
 		switch(kind)
 		{
 			case 1:if(check1==1){var province = document.createElement("input");
@@ -168,14 +267,11 @@ selectarray_classandgrade = (ArrayList)schoolselect.getSchoolArray_classandgrade
 			case 6:if(check6==1){var classandgrade = document.createElement("input");
 					classandgrade.setAttribute("type","text");classandgrade.setAttribute("name","classandgrade_select_input");		
 					var insert = document.getElementById("classandgrade");insert.parentNode.insertBefore(classandgrade,insert);check6=0;}break;
-		
 		}
 		
 	}
 	function createnode()
 	{
-		
-		
 		if(check1&&check2&&check3&&check4&&check5&&check6)
 			{
 				
@@ -197,10 +293,9 @@ selectarray_classandgrade = (ArrayList)schoolselect.getSchoolArray_classandgrade
 						
 					if(xmlhttprequest.readyState==4&&xmlhttprequest.status==200)
 						{
-							
-							
 						//alert(xmlhttprequest.responseText.length);
-						if(xmlhttprequest.responseText.length<7)
+						if(xmlhttprequest.responseText.length
+														<7)
 							{
 							var insertquest = document.createElement("input");
 							insertquest.setAttribute("type","text"); insertquest.setAttribute("name","newapplyquestion");
@@ -230,9 +325,7 @@ selectarray_classandgrade = (ArrayList)schoolselect.getSchoolArray_classandgrade
 						//alert(xmlhttprequest.responseText);
 						 }
 					}
-				
 				}
-					
 					xmlhttprequest.open("get","JoinBookCheckServlet?province_select="+document.getElementById("province").value+
 														"&city_select="+document.getElementById("city").value+
 														"&town_select="+document.getElementById("town").value+
@@ -241,11 +334,7 @@ selectarray_classandgrade = (ArrayList)schoolselect.getSchoolArray_classandgrade
 														"&classandgrade_select="+document.getElementById("classandgrade").value
 						,true);
 					//alert(document.getElementById("username").value);
-					
 					xmlhttprequest.send();
-						
-					
-			
 				}
 			}
 		else 
@@ -266,13 +355,7 @@ selectarray_classandgrade = (ArrayList)schoolselect.getSchoolArray_classandgrade
 			document.getElementById("answerp").innerHTML="问题的答案为:";
 			
 			document.getElementById("create").setAttribute("value","new");
-		}
-		
-	
-		
-		
+		}		
 	}
-</script>
-</body>
-</html>
-</html>
+	</script></body>
+														</html>
