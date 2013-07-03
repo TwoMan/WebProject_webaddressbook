@@ -2,7 +2,8 @@ package connectmodule;
 import java.sql.*;
 public class Connect {
 	private String user = "root";
-	private String password = "wjj";
+	//要改用自己的数据库密码
+	private String password = "5613996";
 	private String url = "jdbc:mysql://localhost:3306/addressbook?useUnicode=true&characterEncoding=gbk";
 	private Connection connection = null;
 	//获得connection连接
