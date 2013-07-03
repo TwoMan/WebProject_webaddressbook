@@ -3,7 +3,8 @@ import java.sql.*;
 public class Connect {
 	private String user = "root";
 	//要改用自己的数据库密码
-	private String password = "5613996";
+	//我又修改回头测试下
+	private String password = "wjj";
 	private String url = "jdbc:mysql://localhost:3306/addressbook?useUnicode=true&characterEncoding=gbk";
 	private Connection connection = null;
 	//获得connection连接
